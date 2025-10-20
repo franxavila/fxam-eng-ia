@@ -27,6 +27,6 @@
   // Mapeia os segredos do GitHub para variáveis de ambiente
   "remoteEnv": {
     "MINHA_API_KEY": "${secret:MINHA_API_KEY_REPO}",
-    "DATABASE_URL": "${secret:DATABASE_URL_REPO}"
+  // "DATABASE_URL": "${secret:DATABASE_URL_REPO}"
   }
 }
