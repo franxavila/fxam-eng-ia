@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Lendo variáveis de ambiente (que vêm dos Segredos do GitHub)
 api_key = os.getenv("MINHA_API_KEY")
-db_url = os.getenv("DATABASE_URL")
+# db_url = os.getenv("DATABASE_URL")
 
 @app.route('/')
 def home():
@@ -26,7 +26,7 @@ def home():
 
     print("\nVariáveis de Ambiente (Segredos):")
     print(f"API Key: {'...' + api_key[-4:] if api_key else 'NÃO CONFIGURADA'}")
-    print(f"DB URL: {'Configurada' if db_url else 'NÃO CONFIGURADA'}")
+   #  print(f"DB URL: {'Configurada' if db_url else 'NÃO CONFIGURADA'}")
 
     return (
         f"<h1>Ambiente pronto!</h1>"
