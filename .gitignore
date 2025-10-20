@@ -1,1 +1,11 @@
+# .gitignore
+
+# Arquivos de ambiente - NUNCA ENVIE O .env!
 .env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
