@@ -1,0 +1,32 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Meu Projeto Python",
+  // Imagem base do container. Esta já vem com Python 3.
+  "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye",
+
+  // Comando executado APENAS UMA VEZ, quando o Codespace é criado.
+  // Isso instala todas as suas dependências.
+  "postCreateCommand": "pip install --no-cache-dir -r requirements.txt",
+
+  // Configurações para o VS Code dentro do Codespace.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      },
+      "extensions": [
+        "ms-python.python",     // Extensão oficial do Python
+        "ms-python.vscode-pylance" // IntelliSense
+      ]
+    }
+  },
+
+  // Encaminha a porta 8000 (útil para web apps como Flask/Django)
+  "forwardPorts": [8000],
+
+  // Mapeia os segredos do GitHub para variáveis de ambiente
+  "remoteEnv": {
+    "MINHA_API_KEY": "${secret:MINHA_API_KEY_REPO}",
+    "DATABASE_URL": "${secret:DATABASE_URL_REPO}"
+  }
+}
